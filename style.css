@@ -80,3 +80,7 @@ button:hover{
     background-color: #e1e6e1;
     color: #e2725b;
 }
+button:disabled{
+    background-color:gray;
+    color:#e1e6e1;
+}
