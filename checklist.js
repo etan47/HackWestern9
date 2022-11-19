@@ -1,7 +1,10 @@
 let table = document.getElementById("list");
 let addBtn = document.getElementById("add");
+let deleteAll = document.getElementById("deleteAll");
 
 addBtn.addEventListener('click', createEntry);
+deleteAll.addEventListener('click', deleteAllEntries);
+
 function createEntry(){
     if(document.getElementById("input").value != 0){
         table.innerHTML += `
@@ -21,4 +24,8 @@ function createEntry(){
             this.parentNode.remove();
         }
     }
+}
+
+function deleteAllEntries(){
+    table.innerHTML = "";
 }
