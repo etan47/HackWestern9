@@ -14,16 +14,29 @@ reset.addEventListener('click', resetTime);
 
 var timer = new easytimer.Timer();
 var timeSecond;
-let restTime;
-let restMode;
+let restTime = 0;
+let restMode = false;
 
 
 
 timer.addEventListener('secondsUpdated', () => {
-    const obj = timer.getTimeValues();
-    hour.innerText = obj.hours.toString().padStart(2, '0');
-    minute.innerText = obj.minutes.toString().padStart(2, '0');
-    second.innerText = obj.seconds.toString().padStart(2, '0');
+    if(restMode === false){
+        const obj = timer.getTimeValues();
+        hour.innerText = obj.hours.toString().padStart(2, '0');
+        minute.innerText = obj.minutes.toString().padStart(2, '0');
+        second.innerText = obj.seconds.toString().padStart(2, '0');
+    }
+    else{
+        const obj = timer.getTimeValues();
+        var seconds = obj.hours*3600 + obj.minutes*60 + obj.seconds;
+        if (restTime - seconds <= 0){
+            alert("Rest Ended");
+            restMode = false;
+            timer.stop;
+            timer.reset;
+        }
+        displayTime(restTime - seconds);
+    }
 })
 
 
@@ -44,6 +57,7 @@ function resetTime(){
 function restWatch(){
     alert("Be sure to go outside and take a break from the screen");
     timer.stop();
+    timer.reset();
     restMode = true;
     timeSecond = (secondsCNT(parseInt(hour.innerText),parseInt(minute.innerText),parseInt(second.innerText)));
     restTime = Math.floor(timeSecond/3);
@@ -53,7 +67,6 @@ function restWatch(){
 
 function startStopwatch(){
     timer.start();
-    restMode = false; 
     start.disabled = true;
 }
 
