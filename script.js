@@ -1,11 +1,11 @@
-let second = document.querySelector("#second");
-let minute = document.querySelector("#minute");
-let hour = document.querySelector("#hour");
+let second = document.getElementById("seconds");
+let minute = document.getElementById("minutes");
+let hour = document.getElementById("hours");
 
-let start = document.querySelector("#start");
-let reset = document.querySelector("#reset");
-let pause = document.querySelector("#pause");
-let rest = doucment.querySelector("#rest");
+let start = document.getElementById("start");
+let reset = document.getElementById("reset");
+let pause = document.getElementById("pause");
+let rest = document.getElementById("rest");
 
 start.addEventListener('click', startStopwatch);
 pause.addEventListener('click', pauseTime);

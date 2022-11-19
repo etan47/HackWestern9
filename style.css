@@ -17,13 +17,19 @@ h2{
     font-size: 150px;
     color:#e1e6e1;
 }
+
 button{
     background-color: #e2725b;
     border: none;
     color: white;
     padding: 15px 20px;
-    text-decoration:none;
     display: inline-block;
     font-size: 16px;
     font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    transition-duration: 0.4s;
+}
+
+button.hover{
+    background-color: #e1e6e1;
+    color: #e2725b;
 }
