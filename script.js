@@ -12,6 +12,7 @@ pause.addEventListener('click', pauseTime);
 rest.addEventListener('click',restWatch);
 reset.addEventListener('click', resetTime);
 
+var timer = new easytimer.Timer();
 
 timer.addEventListener('secondUpdate', () => {
     const obj = timer.getTimeValues();
@@ -22,10 +23,11 @@ timer.addEventListener('secondUpdate', () => {
 
 
 function pauseTime(){
-    second.innerText = "99";
+    timer.pause();
 }
 
 function resetTime(){
+    timer.stop();
     second.innerText = "00";
     minute.innerText = "00";
     hour.innerText = "00";
@@ -37,5 +39,5 @@ function restWatch(){
 }
 
 function startStopwatch(){
-    
+    timer.start();
 }
