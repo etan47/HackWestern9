@@ -32,10 +32,17 @@ timer.addEventListener('secondsUpdated', () => {
         if (restTime - seconds <= 0){
             alert("Rest Ended");
             restMode = false;
-            timer.stop;
-            timer.reset;
+            timer.reset();
+            timer.stop();
+            rest.disabled = false;
+            start.disabled = false;
+            hour.innerText = "00";
+            minute.innerText = "00";
+            second.innerText = "00";
         }
-        displayTime(restTime - seconds);
+        else{
+            displayTime(restTime - seconds);
+        }
     }
 })
 
@@ -49,6 +56,7 @@ function resetTime(){
     timer.stop();
     restMode = false;
     start.disabled = false;
+    rest.disabled = false;
     second.innerText = "00";
     minute.innerText = "00";
     hour.innerText = "00";
@@ -58,11 +66,11 @@ function restWatch(){
     alert("Be sure to go outside and take a break from the screen");
     timer.stop();
     timer.reset();
+    start.disabled = true;
+    rest.disabled = true;
     restMode = true;
     timeSecond = (secondsCNT(parseInt(hour.innerText),parseInt(minute.innerText),parseInt(second.innerText)));
     restTime = Math.floor(timeSecond/3);
-    console.log(timeSecond);
-    console.log(restTime);
 }
 
 function startStopwatch(){
@@ -75,9 +83,9 @@ function secondsCNT(hr,min,sec){
 }
 
 function displayTime(sec){
-    hour.innerText = Math.floor(sec / 3600);
-    minute.innerText = math.floor((sec % 3600) / 60);
-    second.innerText = Math.floor((sec % 3600) % 60);
+    hour.innerText = Math.floor(sec / 3600).toString().padStart(2,0);
+    minute.innerText = Math.floor((sec % 3600) / 60).toString().padStart(2,0);
+    second.innerText = Math.floor((sec % 3600) % 60).toString().padStart(2,0);
 }
 
 function endTime(){
