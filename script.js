@@ -14,11 +14,11 @@ reset.addEventListener('click', resetTime);
 
 var timer = new easytimer.Timer();
 
-timer.addEventListener('secondUpdate', () => {
+timer.addEventListener('secondsUpdated', () => {
     const obj = timer.getTimeValues();
-    hour.innerText = obj.hour.toString().padStart(2, '0');
-    minute.innerText = obj.minute.toString().padStart(2, '0');
-    second.innerText = obj.second.toString().padStart(2, '0');
+    hour.innerText = obj.hours.toString().padStart(2, '0');
+    minute.innerText = obj.minutes.toString().padStart(2, '0');
+    second.innerText = obj.seconds.toString().padStart(2, '0');
 })
 
 
@@ -40,4 +40,6 @@ function restWatch(){
 
 function startStopwatch(){
     timer.start();
+    start.disable = true;
+    console.log("hi");
 }
