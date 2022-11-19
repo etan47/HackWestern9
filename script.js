@@ -24,10 +24,12 @@ timer.addEventListener('secondsUpdated', () => {
 
 function pauseTime(){
     timer.pause();
+    start.disabled = false;
 }
 
 function resetTime(){
     timer.stop();
+    start.disabled = false;
     second.innerText = "00";
     minute.innerText = "00";
     hour.innerText = "00";
@@ -40,6 +42,5 @@ function restWatch(){
 
 function startStopwatch(){
     timer.start();
-    start.disable = true;
-    console.log("hi");
+    start.disabled = true;
 }
