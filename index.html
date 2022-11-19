@@ -26,16 +26,20 @@
             <button id = "rest">Rest</button>
         </div>
         <div class="checklist">
-            <br />
-            <h3>To-Do:</h3>
-            <br />
-            <h4>New Entry:</h4>
-            <input class="input" type="text" placeholder="Task Description">
-            <button class="add" id="add">Add</button>
+            <div id = "titleAdd">
+                <br /><br />
+                <h3>To-Do:</h3>
+                <br />
+                <h4>New Entry:</h4>
+                <input class="input" type="text" placeholder="Task Description" id="input">
+                <button class="add" id="add">Add</button>
+            </div>
+            <div id="list" class="list"></div>
         </div>
 
         <script src="node_modules/easytimer.js/dist/easytimer.min.js"></script>
         <script src="script.js"></script> 
+        <script src="checklist.js"></script>
 
     </body>
 </html>
