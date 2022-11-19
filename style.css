@@ -32,6 +32,10 @@ h4{
     color:#e1e6e1;
 }
 
+.add{
+    padding:10px 15px;
+}
+
 button{
     background-color: #e2725b;
     border: none;
