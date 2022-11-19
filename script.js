@@ -1,10 +1,9 @@
-let digits = document.getElementsByTagName("h1");
-let buttons = document.getElementsByTagName("button");
-<<<<<<< HEAD
-=======
-buttons[0].addEventListener('click', startStopwatch);
-let test = digits[0];
+let tenthSec = document.querySelector("#tenthSec");
+let start = document.querySelector("#start");
+
+start.addEventListener('click', startStopwatch);
+let test = tenthSec;
 function startStopwatch(a){
-    test.innerText = "01";
+    tenthSec.innerText = "01";
 }
->>>>>>> 376dbcd2b5b2c70a7cc5b2b07cecbccb3b393fc8
+console.log("hi");
